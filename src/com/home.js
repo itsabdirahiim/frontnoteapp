@@ -16,6 +16,7 @@ export default function Home() {
           return response.json();
         } else {
           throw new Error("Unauthorized");
+          
         }
       })
       .then((data) => {
