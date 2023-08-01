@@ -7,7 +7,7 @@ export default function Home() {
   const [apiData, setApiData] = React.useState([{}]);
 
   React.useEffect(() => {
-    fetch("/api", {
+    fetch("https://notesapp-83b1790bf6d9.herokuapp.com/api", {
       credentials: "include",
     })
   
