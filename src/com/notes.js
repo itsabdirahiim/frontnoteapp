@@ -127,7 +127,7 @@ export default function Notes() {
     }
   };
   function deletenote(id) {
-    fetch("https://notesapp-83b1790bf6d9.herokuapp.com/api/deletenote", {
+    fetch("api/deletenote", {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -149,7 +149,7 @@ export default function Notes() {
   }
   React.useEffect(() => {
     if (newtime)
-      fetch("https://notesapp-83b1790bf6d9.herokuapp.com/api/updatenote", {
+      fetch("api/updatenote", {
         method: "put",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

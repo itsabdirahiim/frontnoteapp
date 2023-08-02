@@ -8,9 +8,7 @@ export default function Login() {
   const [isInvalidPassword, setIsInvalidPassword] = React.useState(false);
   const [flash, setFlashMessages] = React.useState();
   React.useEffect(() => {
-    fetch("https://notesapp-83b1790bf6d9.herokuapp.com/login", {
-      credentials: "include",
-    })
+    fetch("https://notesapp-83b1790bf6d9.herokuapp.com/login")
       .then((response) => response.json())
       .then((data) => {
         if (data.success === false) {
@@ -46,19 +44,20 @@ export default function Login() {
     }
 
     fetch("https://notesapp-83b1790bf6d9.herokuapp.com/login", {
-      method: "POST",
+      method: "POST", // Add this line to include the credentials
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: email, password: password }),
-
+      credentials: "include",
     })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-
+   
         if (data.success) {
           // Redirect to the desired route
+          // localStorage.setItem("userId", data.userId);
           window.location.href = "/";
         } else {
           if (data.err === "invalid_password") {

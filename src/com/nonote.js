@@ -53,7 +53,7 @@ export function Nonote() {
       });
   };
   function logout() {
-    fetch("https://notesapp-83b1790bf6d9.herokuapp.com/api/logout")
+    fetch("https://notesapp-83b1790bf6d9.herokuapp.com/logout")
       .then((response) => {
         if (response.ok) {
           return response.json();
