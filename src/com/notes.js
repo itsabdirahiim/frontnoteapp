@@ -32,7 +32,7 @@ export default function Notes() {
         setApiData(data);
       })
       .catch((error) => {
-        window.location.href = "/login";
+        window.location.href = "/";
       });
   }, []);
 
