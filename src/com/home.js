@@ -21,7 +21,7 @@ export default function Home() {
         setApiData(data);
       })
       .catch((error) => {
-        window.location.href = "/";
+        window.location.href = "/login";
       });
   }, []);
 
